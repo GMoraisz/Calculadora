@@ -1,19 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Elementos DOM
     const display = document.getElementById("display");
     const buttons = document.querySelectorAll("button");
 
-    // Variáveis de estado
     let currentInput = "";
     let currentOperator = "";
     let firstOperand = "";
 
-    // Adiciona eventos aos botões
     buttons.forEach(button => {
         button.addEventListener("click", handleButtonClick);
     });
 
-    // Função para lidar com cliques nos botões
     function handleButtonClick(event) {
         const buttonValue = event.target.innerText;
 
@@ -36,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Função para lidar com entrada numérica e operadores
     function handleInput(value) {
         if (isNumber(value)) {
             currentInput += value;
@@ -49,18 +44,15 @@ document.addEventListener("DOMContentLoaded", function () {
         updateDisplay();
     }
 
-    // Função para verificar se o valor é um número
     function isNumber(value) {
         return !isNaN(value) || value === ",";
     }
 
-    // Função para verificar se o valor é um operador
     function isOperator(value) {
         const operators = ["+", "-", "*", "/"];
         return operators.includes(value);
     }
 
-    // Função para lidar com operadores
     function handleOperator(operator) {
         if (currentInput !== "") {
             if (firstOperand === "") {
@@ -74,7 +66,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Função para calcular o resultado
     function calculateResult() {
         if (currentInput !== "") {
             const result = eval(`${firstOperand} ${currentOperator} ${currentInput}`);
@@ -85,13 +76,11 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Função para limpar a última entrada
     function clearEntry() {
         currentInput = "";
         updateDisplay();
     }
 
-    // Função para limpar todos os valores
     function clearAll() {
         currentInput = "";
         firstOperand = "";
@@ -99,13 +88,11 @@ document.addEventListener("DOMContentLoaded", function () {
         updateDisplay();
     }
 
-    // Função para apagar o último caractere (backspace)
     function backspace() {
         currentInput = currentInput.slice(0, -1);
         updateDisplay();
     }
 
-    // Função para adicionar um ponto decimal
     function addDecimal() {
         if (!currentInput.includes(".")) {
             currentInput += ".";
@@ -113,7 +100,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
-    // Função para atualizar a exibição
     function updateDisplay() {
         display.value = currentInput !== "" ? currentInput : "0";
     }

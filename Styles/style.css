@@ -1,80 +1,95 @@
-@import url('https://fonts.googleapis.com/css2?family=Young+Serif&display=swap');
-
-
-
-
-* {
+body {
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    scroll-behavior: smooth;
-}
-
-body {
-    background-color: #13747d;
+    background-color: #2c3e50;
 }
 
 .calculator {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: #34495e;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: solid black;
 }
-#display {
-    text-align: center;
-}
-h1 {
-    text-align: center;
-    margin-top: 0.5rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 2.1rem;
-    color: #fcf7c5;
-    text-shadow: 0.2rem 0.2rem 0.2rem #29221f;
-   
-    
-}
-
-footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    color: var(--cor-quintenaria);  /* Cor do texto no rodapé */
-    font-family: var(--fonte-secundaria);  /* Fonte no rodapé */
-     /* Espaçamento superior para o rodapé */
-}
-
 
 table {
-    border: 0.35rem solid #29221f;
-    background-color: #fc354c;
-    border-radius: 0.6rem;
-    margin-top: 1rem;
-    width: 5rem;
+    width: 100%;
+    border-collapse: collapse;
 }
 
 td {
-    padding: 0.150rem;
-    
+    padding: 10px;
+    text-align: center;
 }
 
-input {
-    width: 99%;
-    font-size: 1.5rem;
-    border-radius: 0.5rem;
-    background-color: aliceblue;
-    border: 0.1rem solid black;
+h1 {
+   
+    margin: 0;
+    font-size: 2rem;
+    color: #ecf0f1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+}
+
+#display {
+    width: 100%;
+    padding: 10px;
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    border: 1px solid #2c3e50;
+    border-radius: 5px;
+    box-sizing: border-box;
+    color: #ecf0f1;
+    background-color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
 }
 
 button {
-    color: azure ;
-    text-shadow: 0.125rem 0.125rem 0.125rem #29221f;
-    background: linear-gradient(to right, #fc354c, #fcf7c5);
-    width: 3rem;
-    height: 2.5rem;
-    margin: 0.25rem 0;
-    border: 0.18rem solid black;
-    border-radius: 0.3rem;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 1.5rem;
+    width: 100%;
+    padding: 15px;
+    font-size: 1.2em;
+    border: 1px solid #34495e;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: rgba(255, 0, 0, 0.5);
+    color: #ecf0f1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+
+}
+
+button:hover {
+    background-color: rgba(255, 0, 0, 0.7);
+}
+
+.operator {
+    background-color: #ff9500;
+    color: #ecf0f1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+}
+
+.clear,
+.clear-all,
+.equals {
+    width: calc(50% - 5px);
+    background-color: #3498db;
+    color: #ecf0f1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); 
+}
+
+.equals {
+    background-color: #2ecc71;
+}
+
+footer {
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 5px;
+    padding: 10px;
+    background-color: #34495e;
+    color: #ecf0f1;
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5)
 }
